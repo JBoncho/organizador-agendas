@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #111111;
+    background-color: #f1f8f9;
+}
+
+.contenedor{
+    width: 800px;
+    max-width: 50rem;
+    margin: 2rem auto;
+}
+
+.titulo{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+#formulario-tarea{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background-color: #ffffffff;
+    border-radius: 0.75rem;
+}
+
+#formulario-tarea > div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#formulario-tarea label{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#formulario-tarea input, #formulario-tarea select{
+    width: 100;
+    min-width: 0;
+    padding: 0.75rem;
+    font: inherit;
+    border: 0.1rem solid #d1d5db;
+    border-radius: 0.5rem;
+}
+
+#formulario-tarea button{
+    grid-column: 1/-1;
+    padding: 0.75rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    color: #ffffffff;
+    background-color: #4f46e5;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+@media(max-width: 36rem){
+    #formulario-tarea{
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .titulo{
+        font-size: 1.75rem;
+    }
+}
+
+
+

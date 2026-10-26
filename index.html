@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OganizaBlog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1 class="titulo">PlanificaBlog</h1>
+
+        <form id="formulario-tarea">
+            <!--codigo tarea-->
+            <div>
+                <label for="codigo-tarea">Código de tarea:</label>
+                <input type="text" id="codigo-tarea" name="codigo-tarea" disabled>
+            </div>
+
+            <!--tarea-->
+            <div class="campo-tarea">
+                <label for="nombre-tarea">Tarea:</label>
+                <input type="text" id="nombre-tarea" name="nombre">
+            </div>
+
+            <!--descripcion de la tarea-->
+            <div>
+                <label for="description">Descripción:</label>
+                <input type="text" id="description" name="description">
+            </div>
+
+            <!--asignado-->
+            <div>
+                <label for="asignado">Asignado a:</label>
+                <input type="text" id="asignado" name="asignado">
+            </div>            
+
+            <!--fecha entrega-->
+            <div>
+                <label for="fecha-estimada">Fecha entrega</label>
+                <input type="date" id="fecha-estimada" name="fecha" required>
+            </div>
+
+            <!--estado tarea-->
+            <div>
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    <option value="" selected>Selecciones un estado</option>
+                    <option value="por-hacer">Por Hacer</option>
+                    <option value="en-proceso">En Proceso</option>
+                    <option value="revision">En Revisión</option>
+                    <option value="terminada">Hecho</option>
+                </select>
+            </div>
+            
+            <!--importancia tareas-->
+            <div>
+                <label for="importancia">Importancia:</label>
+                <select id="importancia" name="importancia">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Alta</option>
+                    <option value="urgente">Urgente</option>
+                </select>
+            </div>
+
+            <button type="submit">Crear tarea</button>
+
+        </form>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
