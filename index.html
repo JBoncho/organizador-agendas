@@ -10,7 +10,7 @@
     <main class="contenedor">
         <h1 class="titulo">PlanificaBlog</h1>
 
-        <form id="formulario-tarea">
+        <form id="formulario-tarea" novalidate>
             <!--codigo tarea-->
             <div>
                 <label for="codigo-tarea">Código de tarea:</label>
@@ -45,7 +45,7 @@
             <div>
                 <label for="estado">Estado:</label>
                 <select id="estado" name="estado">
-                    <option value="" selected>Selecciones un estado</option>
+                    <option value="" selected>Selecciona un estado</option>
                     <option value="por-hacer">Por Hacer</option>
                     <option value="en-proceso">En Proceso</option>
                     <option value="revision">En Revisión</option>
@@ -67,7 +67,14 @@
             <button type="submit">Crear tarea</button>
 
         </form>
+
+        <section>
+            <h2>Lista de tareas</h2>
+            <div id="lista-tareas"></div>
+        </section>
+
+
     </main>
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </body>
 </html>

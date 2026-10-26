@@ -5,6 +5,6 @@ export class Tarea{
         this.descripcion = descripcion;
         this.asignadoA = asignadoA;
         this.fechaDeEntrega = new Date(fechaDeEntrega);
-        this.estado = this.estado;
+        this.estado = estado;
     }
 }

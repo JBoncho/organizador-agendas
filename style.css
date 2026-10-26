@@ -79,5 +79,33 @@ body{
     }
 }
 
+#lista-tareas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.tarjeta-tarea {
+    padding: 1.25rem;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+}
+
+.tarjeta-tarea h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-tarea p {
+    margin: 0.5rem 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 36rem) {
+    #lista-tareas {
+        grid-template-columns: 1fr;
+    }
+}
 
 

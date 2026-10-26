@@ -1,42 +1,67 @@
-export class TaskManager{
-    constructor(){
-        this.tasks = [];
-        this.nextId = 1;
+export class TaskManager {
+  constructor() {
+    this.tasks = [];
+    this.nextId = 1;
+  }
+
+  getAllTasks() {
+    return this.tasks;
+  }
+
+  getTasksWithStatus(status) {
+    return this.tasks.filter((task) => task.estado === status);
+  }
+
+  addTask(task) {
+    task.id = this.nextId;
+    this.nextId++;
+
+    this.tasks.push(task);
+  }
+
+  deleteTask(taskId) {
+    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+  }
+
+  updateTask(taskId, status) {
+    const task = this.tasks.find((task) => task.id === taskId);
+
+    if (task) {
+      task.estado = status;
     }
+  }
 
-    getAllTasks(){
-        return this.tasks;
+  assignTask(taskId, assignee) {
+    const task = this.tasks.find((task) => task.id === taskId);
+
+    if (task) {
+      task.asignadoA = assignee;
     }
+  }
 
-    getTasksWithStatus(status){
-        return this.tasks.filter(task => task.estado === status);
-    }
+  createTaskCard(tarea) {
+    const tarjeta = document.createElement("div");
+    tarjeta.classList.add("tarjeta-tarea");
 
-    addTask(task){
-        task.id = this.nextId;
-        this.nextId++;
+    const nombre = document.createElement("h3");
+    nombre.textContent = tarea.nombre;
 
-        this.tasks.push(task);
-    }
+    const descripcion = document.createElement("p");
+    descripcion.textContent = "Descripción: " + tarea.descripcion;
 
-    deleteTask(taskId) {
-        this.tasks = this.tasks.filter(task => task.id !== taskId);
-    }
+    const asignado = document.createElement("p");
+    asignado.textContent = "Asignado a: " + tarea.asignadoA;
 
-    updateTask(taskId, status) {
-    const task = this.tasks.find(task => task.id === taskId);
+    const fecha = document.createElement("p");
+    fecha.textContent =
+      "Fecha de entrega: " +
+      new Date(tarea.fechaDeEntrega).toLocaleDateString();
 
-        if (task) {
-            task.estado = status;
-        }
-    }
+    const estado = document.createElement("p");
+    estado.textContent = "Estado: " + tarea.estado;
 
-        assignTask(taskId, assignee) {
-        const task = this.tasks.find(task => task.id === taskId);
+    tarjeta.append(nombre, descripcion, asignado, fecha, estado);
 
-        if (task) {
-            task.asignadoA = assignee;
-        }
-    }
-
+    return tarjeta;
+  }
 }
