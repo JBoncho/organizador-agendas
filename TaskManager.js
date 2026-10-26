@@ -43,6 +43,9 @@ export class TaskManager {
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("tarjeta-tarea");
 
+    const consecutivo = document.createElement("p");
+    consecutivo.textContent = "Código de tarea: " + tarea.id;
+
     const nombre = document.createElement("h3");
     nombre.textContent = tarea.nombre;
 
@@ -60,7 +63,7 @@ export class TaskManager {
     const estado = document.createElement("p");
     estado.textContent = "Estado: " + tarea.estado;
 
-    tarjeta.append(nombre, descripcion, asignado, fecha, estado);
+    tarjeta.append(consecutivo, nombre, descripcion, asignado, fecha, estado);
 
     return tarjeta;
   }
